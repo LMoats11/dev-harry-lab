@@ -4,68 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grocery Order Form</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7ue5e+qbc5pXfSMfbiz12nEOnjsudlprN8s" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.css" rel="stylesheet" integrity="sha384-Z1jljFVKQdPf2MyxhKjrte5kSeBb2cShK5AcZG0j0xtY2hNe/pvZ+6lz6IHw4l2b" crossorigin="anonymous">
 </head>
 <body>
   <div class="container">
     <div class="row">
       <div class="col-md-6 card mt-4 offset-md-3">
-        <h1>Order Your Groceries</h1> 
-        <form id="groceryForm">
+        <h1>Order Your Groceries</h1>
+        <form id="orderForm">
           
           <div class="input-group mb-3">
-            <span class="input-group-text">@</span>
-            <input id="inputCustomerName" type="text" class="form-control" placeholder="Customer Name">
+            <span class="input-group-text" id="basic-addon1">@</span>
+            <input id="inputUserName" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
           </div>
-
-          <div class="input-group mb-3">
-            <span class="input-group-text">📞</span>
-            <input type="tel" class="form-control" id="inputPhone" placeholder="Phone Number">
-          </div>
-
-          <div class="input-group mb-3">
-            <label class="input-group-text" for="inputCategory">Category</label>
+          <div class="mb-3">
+            <label for="inputCategory" class="form-label">Select Category</label>
             <select id="inputCategory" class="form-select">
-              <option selected>Select a category</option>
+              <option selected disabled>Choose a category</option>
               <option value="fruits">Fruits</option>
               <option value="vegetables">Vegetables</option>
               <option value="dairy">Dairy</option>
-              <option value="bakery">Bakery</option>
+              <option value="meat">Meat</option>
             </select>
           </div>
-
-          <div class="input-group mb-3">
-            <input id="newItem" type="text" class="form-control" placeholder="Add new item">
-            <button type="button" id="btnAddItem" class="btn btn-secondary">Add Item</button>
-          </div>
-
-          <div class="input-group mb-3">
-            <label class="input-group-text" for="inputItems">Items</label>
-            <select id="inputItems" class="form-select">
-              <option selected>Select an item</option>
+          <div class="mb-3">
+            <label for="inputItems" class="form-label">Select Item</label>
+            <select id="inputItems" class="form-select" disabled>
+              <option selected disabled>Select a category first</option>
             </select>
           </div>
-
           <div class="input-group mb-3">
-            <label class="input-group-text" for="inputQuantity">Quantity</label>
-            <input id="inputQuantity" type="number" class="form-control" min="1" placeholder="Quantity">
+            <span class="input-group-text" id="basic-addon2">Qty</span>
+            <input id="inputQuantity" type="number" class="form-control" placeholder="Quantity" aria-label="Quantity" aria-describedby="basic-addon2" min="1" value="1">
           </div>
 
-          <button type="button" class="btn btn-primary mt-3" id="btnSubmit">Submit Order</button>
-        
-        </form> 
+          <button type="submit" class="btn btn-primary">Submit Order</button>
+        </form>
+        <div id="output" class="mt-4"></div>
       </div>
     </div>
-
-    
-    <div id="output" class="mt-4"></div>
   </div>
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="script.js"></script>
-</body>
-</html>
-
-
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" integrity="sha384-lkjVkj1+jdkfnKd8dfsdkfjkkQpY6k5cdjfhk3kGj8fns==" crossorigin="anonymous"></script>
+  <script src="scripts/script.js"></script>
 </body>
 </html>
