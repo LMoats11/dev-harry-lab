@@ -1,31 +1,40 @@
-$(() => {
-  console.log("ready!");
+$(document).ready(function() {
+  $('#inputCategory').change(function() {
+    var category = $(this).val();
+    var items = [];
 
-  $('#btnAddItem').on('click', () => {
-    const newItem = $('#newItem').val().trim();
-    if (newItem) {
-      $('#inputItems').append(new Option(newItem, newItem));
-      $('#newItem').val('');
-    } else {
-      alert("Please enter an item to add.");
+    if (category === 'fruits') {
+      items = ['Apple', 'Banana', 'Orange'];
+    } else if (category === 'vegetables') {
+      items = ['Carrot', 'Spinach', 'Broccoli'];
+    } else if (category === 'dairy') {
+      items = ['Milk', 'Cheese', 'Yogurt'];
+    } else if (category === 'meat') {
+      items = ['Chicken', 'Beef', 'Pork'];
     }
+
+    $('#inputItems').empty().append('<option selected disabled>Select an item</option>');
+    items.forEach(function(item) {
+      $('#inputItems').append('<option value="' + item + '">' + item + '</option>');
+    });
+
+    $('#inputItems').prop('disabled', false);
   });
 
-  // Display form values in the DOM on submit
-  $('#btnSubmit').on('click', (event) => {
+  $('#orderForm').submit(function(event) {
     event.preventDefault();
 
-    const customerName = $('#inputCustomerName').val();
-    const phone = $('#inputPhone').val();
-    const selectedItem = $('#inputItems').find(":selected").val() || 'Not selected';
-    const quantity = $('#inputQuantity').val() || 'Not specified';
+    var userName = $('#inputUserName').val();
+    var selectedCategory = $('#inputCategory').val();
+    var selectedItem = $('#inputItems').val();
+    var quantity = $('#inputQuantity').val();
 
     $('#output').html(`
-      <h3>Order Summary:</h3>
-      <p><strong>Customer Name:</strong> ${customerName}</p>
-      <p><strong>Phone Number:</strong> ${phone}</p>
-      <p><strong>Selected Item:</strong> ${selectedItem}</p>
-      <p><strong>Quantity:</strong> ${quantity}</p>
+      <h4>Order Summary</h4>
+      <p>Username: ${userName}</p>
+      <p>Category: ${selectedCategory}</p>
+      <p>Item: ${selectedItem}</p>
+      <p>Quantity: ${quantity}</p>
     `);
   });
 });
