@@ -18,7 +18,7 @@ $(document).ready(function() {
       $('#inputItems').append('<option value="' + item + '">' + item + '</option>');
     });
 
-    $('#inputItems').prop('disabled', false); // Enable the dropdown
+    $('#inputItems').prop('disabled', false); 
   });
 
   $('#orderForm').submit(function(event) {
@@ -29,12 +29,18 @@ $(document).ready(function() {
     var selectedItem = $('#inputItems').val();
     var quantity = $('#inputQuantity').val();
 
+    if (!selectedItem) {
+      alert("Please select an item before submitting.");
+      return;
+    }
+
     $('#output').html(`
       <h4>Order Summary</h4>
-      <p>Username: ${userName}</p>
-      <p>Category: ${selectedCategory}</p>
-      <p>Item: ${selectedItem}</p>
-      <p>Quantity: ${quantity}</p>
+      <p><strong>Username:</strong> ${userName}</p>
+      <p><strong>Category:</strong> ${selectedCategory}</p>
+      <p><strong>Item:</strong> ${selectedItem}</p>
+      <p><strong>Quantity:</strong> ${quantity}</p>
     `);
   });
 });
+
