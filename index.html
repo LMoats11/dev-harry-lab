@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grocery Order Form</title>
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7ue5e+qbc5pXfSMfbiz12nEOnjsudlprN8s" crossorigin="anonymous">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.css" rel="stylesheet" integrity="sha384-Z1jljFVKQdPf2MyxhKjrte5kSeBb2cShK5AcZG0j0xtY2hNe/pvZ+6lz6IHw4l2b" crossorigin="anonymous">
+  <title>Order Your Groceries</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.css" rel="stylesheet">
 </head>
 <body>
   <div class="container">
@@ -14,7 +13,6 @@
       <div class="col-md-6 card mt-4 offset-md-3">
         <h1>Order Your Groceries</h1>
         <form id="orderForm">
-          
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">@</span>
             <input id="inputUserName" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
@@ -39,17 +37,15 @@
             <span class="input-group-text" id="basic-addon2">Qty</span>
             <input id="inputQuantity" type="number" class="form-control" placeholder="Quantity" aria-label="Quantity" aria-describedby="basic-addon2" min="1" value="1">
           </div>
-
           <button type="submit" class="btn btn-primary">Submit Order</button>
         </form>
         <div id="output" class="mt-4"></div>
       </div>
     </div>
   </div>
-  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" integrity="sha384-lkjVkj1+jdkfnKd8dfsdkfjkkQpY6k5cdjfhk3kGj8fns==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
   <script src="scripts/script.js"></script>
 </body>
 </html>
