@@ -18,7 +18,7 @@ $(document).ready(function() {
       $('#inputItems').append('<option value="' + item + '">' + item + '</option>');
     });
 
-    $('#inputItems').prop('disabled', false);
+    $('#inputItems').prop('disabled', false); // Enable the dropdown
   });
 
   $('#orderForm').submit(function(event) {
@@ -36,5 +36,8 @@ $(document).ready(function() {
       <p>Item: ${selectedItem}</p>
       <p>Quantity: ${quantity}</p>
     `);
+  });
+});
+
   });
 });
